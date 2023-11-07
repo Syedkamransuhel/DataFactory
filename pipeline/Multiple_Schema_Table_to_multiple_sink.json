@@ -28,12 +28,6 @@
 				}
 			},
 			{
-				"name": "If Condition1",
-				"type": "IfCondition",
-				"dependsOn": [],
-				"userProperties": []
-			},
-			{
 				"name": "ForEach_for_lookup_values",
 				"type": "ForEach",
 				"dependsOn": [
@@ -103,11 +97,11 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"ContainerName": {
-											"value": "@item().ContainerName",
+											"value": "@item().Container_name",
 											"type": "Expression"
 										},
 										"DirectoryName": {
-											"value": "@item().DirectoryName",
+											"value": "@concat(formatDateTime(utcnow(), 'yyyy'), '/',formatDateTime(utcnow(),'MM'),'/',formatDateTime(utcnow(),'dd'),'/','item().DirectoryName','/')",
 											"type": "Expression"
 										}
 									}

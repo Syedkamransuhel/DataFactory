@@ -1,0 +1,33 @@
+{
+	"name": "adls_json_dynamic_sink_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_dynamic_Ls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ContainerName": {
+				"type": "string"
+			},
+			"DirectoryName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().DirectoryName",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().ContainerName",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	}
+}

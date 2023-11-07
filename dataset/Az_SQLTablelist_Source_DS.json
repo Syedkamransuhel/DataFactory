@@ -1,5 +1,5 @@
 {
-	"name": "Azure_SQL_Source_DS",
+	"name": "Az_SQLTablelist_Source_DS",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",

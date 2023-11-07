@@ -1,0 +1,18 @@
+{
+	"name": "eventtriger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/demo/blobs/",
+			"blobPathEndsWith": ".csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/e4356608-3f1c-40b8-b8ae-e5b4f3a968f4/resourceGroups/freeaccounts/providers/Microsoft.Storage/storageAccounts/projectsadls",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

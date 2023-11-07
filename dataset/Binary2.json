@@ -1,0 +1,27 @@
+{
+	"name": "Binary2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage5",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"dfile": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().dfile",
+					"type": "Expression"
+				},
+				"fileSystem": "aas"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

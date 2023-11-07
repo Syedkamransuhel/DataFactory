@@ -1,0 +1,41 @@
+{
+	"name": "CSV_adls",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_LS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sfile": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().sfile",
+					"type": "Expression"
+				},
+				"fileSystem": "aas"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Order Id",
+				"type": "String"
+			},
+			{
+				"name": "Return Reason",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

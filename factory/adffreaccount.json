@@ -1,0 +1,9 @@
+{
+	"name": "adffreaccount",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "66298af9-b6e3-4bcf-ae6f-87e165e45b9e",
+		"tenantId": "76a5f1d5-b60e-488c-b3e5-1144d55eac6e"
+	}
+}

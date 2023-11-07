@@ -1,0 +1,115 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "emp_ds",
+						"type": "DatasetReference"
+					},
+					"name": "emp"
+				},
+				{
+					"dataset": {
+						"referenceName": "dept_ds",
+						"type": "DatasetReference"
+					},
+					"name": "dept"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "deductingsalary"
+				},
+				{
+					"name": "split1"
+				},
+				{
+					"name": "union1"
+				},
+				{
+					"name": "join1"
+				},
+				{
+					"name": "select1"
+				},
+				{
+					"name": "sortsalary"
+				},
+				{
+					"name": "split2"
+				},
+				{
+					"name": "union2"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          emp_id as integer,",
+				"          name as string,",
+				"          location as string,",
+				"          salary as decimal(19,4),",
+				"          dept_id as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> emp",
+				"source(output(",
+				"          dept_id as integer,",
+				"          dept_name as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> dept",
+				"emp derive(deductsalary = salary-500) ~> deductingsalary",
+				"deductingsalary split(salary>15000,",
+				"     disjoint: false) ~> split1@(highpaying, lowpaying)",
+				"split1@highpaying, split1@lowpaying union(byName: true)~> union1",
+				"union1, dept join(union1@dept_id == dept@dept_id,",
+				"     joinType:'left',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1",
+				"join1 select(mapColumn(",
+				"          emp_id,",
+				"          name,",
+				"          location,",
+				"          salary,",
+				"          dept_id = union1@dept_id,",
+				"          deductsalary,",
+				"          dept_name",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sort(desc(deductsalary, true)) ~> sortsalary",
+				"sortsalary split(dept_name==\"IT\",",
+				"     dept_name==\"Hr\",",
+				"     dept_name==\"Data Engineer\",",
+				"     disjoint: false) ~> split2@(IT, HR, DataEngineer, RestDeapartment)",
+				"split2@RestDeapartment, split2@IT, split2@HR, split2@DataEngineer union(byName: true)~> union2",
+				"union2 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
+			]
+		}
+	}
+}

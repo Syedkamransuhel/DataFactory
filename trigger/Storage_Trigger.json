@@ -8,6 +8,9 @@
 				"pipelineReference": {
 					"referenceName": "az_databricks_notebook_pipeline",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"fileName": "@triggerBody().fileName"
 				}
 			}
 		],

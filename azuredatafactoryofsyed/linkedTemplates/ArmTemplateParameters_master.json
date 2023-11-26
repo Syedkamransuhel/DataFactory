@@ -1,0 +1,108 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "azuredatafactoryofsyed"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage4_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage5_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage6_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase4_connectionString": {
+			"value": ""
+		},
+		"SQL_LS1_connectionString": {
+			"value": ""
+		},
+		"adls_LS_accountKey": {
+			"value": ""
+		},
+		"adls_link_source_accountKey": {
+			"value": ""
+		},
+		"adls_parquet_source_accountKey": {
+			"value": ""
+		},
+		"emp_ls_connectionString": {
+			"value": ""
+		},
+		"emp_ls1_connectionString": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
+			"value": ""
+		},
+		"sql_ls_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://projectsadls.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://projectsadls.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://projectsadls.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage4_properties_typeProperties_url": {
+			"value": "https://projectsadls.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"value": "https://projectsadls.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage6_properties_typeProperties_url": {
+			"value": "https://projectsadls.dfs.core.windows.net/"
+		},
+		"adls_LS_properties_typeProperties_url": {
+			"value": "https://projectsadls.dfs.core.windows.net/"
+		},
+		"adls_link_source_properties_typeProperties_url": {
+			"value": "https://projectsadls.dfs.core.windows.net/"
+		},
+		"adls_parquet_source_properties_typeProperties_url": {
+			"value": "https://projectsadls.dfs.core.windows.net/"
+		},
+		"syed_key_vault_ls_properties_typeProperties_baseUrl": {
+			"value": "https://syed-key-vault.vault.azure.net/"
+		},
+		"Storage_Trigger_properties_az_databricks_notebook_pipeline_parameters_fileName": {
+			"value": "@triggerBody().fileName"
+		},
+		"Storage_Trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/69da7fec-6f39-4453-9cd4-a5c70c821ddd/resourceGroups/Syed_projects/providers/Microsoft.Storage/storageAccounts/syedadlsstorage"
+		},
+		"eventtriger_properties_typeProperties_scope": {
+			"value": "/subscriptions/e4356608-3f1c-40b8-b8ae-e5b4f3a968f4/resourceGroups/freeaccounts/providers/Microsoft.Storage/storageAccounts/projectsadls"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

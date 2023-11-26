@@ -1,0 +1,33 @@
+{
+	"name": "AmazonS3_Ls",
+	"properties": {
+		"annotations": [],
+		"type": "AmazonS3",
+		"typeProperties": {
+			"serviceUrl": "https://s3.amazonaws.com",
+			"accessKeyId": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "syed_key_vault_ls",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "s3-access-key",
+				"secretVersion": "762098ae1dba435994f3e354b4b25b55"
+			},
+			"secretAccessKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "syed_key_vault_ls",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "s3-Secret-access-key",
+				"secretVersion": "b1b64ce484a2465b8bde6a4daaa9dc1f"
+			},
+			"authenticationType": "AccessKey"
+		},
+		"connectVia": {
+			"referenceName": "NewintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

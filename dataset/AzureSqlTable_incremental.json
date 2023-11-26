@@ -1,0 +1,33 @@
+{
+	"name": "AzureSqlTable_incremental",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSql_dynamic_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "FruitID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FruitName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ModifiedDateTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Fruits"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

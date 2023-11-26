@@ -1,11 +1,11 @@
 {
-	"name": "syed_key_vault_ls",
+	"name": "AzureKeyVault1",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
-			"baseUrl": "https://syed-key-vault.vault.azure.net/"
+			"baseUrl": "https://keyvaultsyeds.vault.azure.net/"
 		}
 	}
 }

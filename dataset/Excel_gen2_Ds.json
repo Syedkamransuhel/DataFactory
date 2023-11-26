@@ -1,0 +1,36 @@
+{
+	"name": "Excel_gen2_Ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azuregen2_ls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Sheet_Index": {
+				"type": "int"
+			},
+			"FileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"fileSystem": "landing"
+			},
+			"sheetIndex": {
+				"value": "@dataset().Sheet_Index",
+				"type": "Expression"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

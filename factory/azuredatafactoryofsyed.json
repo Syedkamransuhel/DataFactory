@@ -1,0 +1,9 @@
+{
+	"name": "azuredatafactoryofsyed",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9db85f06-aec2-46cb-a445-e94cd55f867b",
+		"tenantId": "f092a14c-a7db-48fc-94ae-e82dd8448fa2"
+	}
+}

@@ -1,5 +1,6 @@
 {
 	"name": "AmazonS3_Ls",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AmazonS3",
@@ -11,8 +12,7 @@
 					"referenceName": "syed_key_vault_ls",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "s3-access-key",
-				"secretVersion": "762098ae1dba435994f3e354b4b25b55"
+				"secretName": "s3-access-key"
 			},
 			"secretAccessKey": {
 				"type": "AzureKeyVaultSecret",
@@ -20,14 +20,9 @@
 					"referenceName": "syed_key_vault_ls",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "s3-Secret-access-key",
-				"secretVersion": "b1b64ce484a2465b8bde6a4daaa9dc1f"
+				"secretName": "s3-Secret-access-key"
 			},
 			"authenticationType": "AccessKey"
-		},
-		"connectVia": {
-			"referenceName": "NewintegrationRuntime",
-			"type": "IntegrationRuntimeReference"
 		}
 	}
 }

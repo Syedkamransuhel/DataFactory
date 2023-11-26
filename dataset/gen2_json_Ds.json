@@ -1,0 +1,26 @@
+{
+	"name": "gen2_json_Ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_LS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Foldername": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": {
+					"value": "@dataset().Foldername",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	}
+}

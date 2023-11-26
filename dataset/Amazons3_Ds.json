@@ -1,0 +1,22 @@
+{
+	"name": "Amazons3_Ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AmazonS3_Ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AmazonS3Location",
+				"bucketName": "iot-data-load",
+				"folderPath": {
+					"value": "@concat(formatDateTime(utcNow(),'yyyy'),'/',formatDateTime(utcNow(),'MMM'),'/',formatDateTime(utcNow(),'dd'),'/')",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	}
+}

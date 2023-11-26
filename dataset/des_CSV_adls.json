@@ -19,7 +19,7 @@
 					"value": "@dataset().sinkfile",
 					"type": "Expression"
 				},
-				"fileSystem": "demo"
+				"fileSystem": "landing"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

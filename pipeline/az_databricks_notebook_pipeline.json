@@ -1,0 +1,28 @@
+{
+	"name": "az_databricks_notebook_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "az_adb_notebook",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/syed.suhel101@outlook.com/Ap-Morgan_Project"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks_Ls",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}

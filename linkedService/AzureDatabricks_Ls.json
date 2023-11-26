@@ -15,9 +15,9 @@
 				"secretVersion": "9af9882b27084961a6a13a44586ffe0b"
 			},
 			"newClusterNodeType": "Standard_D4as_v5",
-			"newClusterNumOfWorker": "5",
+			"newClusterNumOfWorker": "3:5",
 			"newClusterVersion": "10.4.x-scala2.12",
-			"clusterOption": "Fixed",
+			"clusterOption": "Autoscaling",
 			"newClusterInitScripts": []
 		},
 		"connectVia": {

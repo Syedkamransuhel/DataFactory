@@ -11,9 +11,10 @@
 					"referenceName": "syed_key_vault_ls",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "azure-databricks-token"
+				"secretName": "azure-databricks-token",
+				"secretVersion": "9af9882b27084961a6a13a44586ffe0b"
 			},
-			"newClusterNodeType": "Standard_DS3_v2",
+			"newClusterNodeType": "Standard_D4as_v5",
 			"newClusterNumOfWorker": "1",
 			"newClusterVersion": "10.4.x-scala2.12",
 			"clusterOption": "Fixed",
